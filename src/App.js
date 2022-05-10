@@ -1,33 +1,24 @@
 import * as React from 'react';
 import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
+import { Grid, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
-import ProTip from './ProTip';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import SimpleCounter from './views/SimpleCounter';
+import TodoList from './views/TodoList';
+import NameCard from './views/NameCard';
 
 export default function App() {
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Create React App example
-        </Typography>
-        <ProTip />
-        <Copyright />
-      </Box>
-    </Container>
+    <Grid container maxWidth="xl" rowSpacing={3}>
+      <Grid item xs={12} align='center'>
+        <SimpleCounter />
+      </Grid>
+      <Grid item xs={12}>
+        <NameCard />
+      </Grid>
+      <Grid item xs={12}>
+        <TodoList />
+      </Grid>
+    </Grid>
   );
 }

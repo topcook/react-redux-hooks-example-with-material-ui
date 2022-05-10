@@ -11,10 +11,15 @@
   "dependencies": {
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
     "@mui/material": "latest",
+    "prop-types": "^15.8.1",
     "react": "latest",
     "react-dom": "latest",
-    "react-scripts": "latest"
+    "react-redux": "^8.0.1",
+    "react-scripts": "latest",
+    "redux": "^4.2.0"
   },
   "browserslist": {
     "production": [
@@ -27,5 +32,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@iconify/react": "^3.2.1"
   }
 }
