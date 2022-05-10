@@ -1,5 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { ListItem, ListItemText, IconButton } from '@mui/material';
+import { Cancel as CancelIcon } from '@material-ui/icons';
 import { TodoAction } from '../action/TodoAction';
 
 //Single todo item component
@@ -14,19 +16,20 @@ const TodoItem = (props) => {
         //filter to get the todoId which need to be remove
         let newTodoList = todoList.filter(item => item.id !== todoId);
         handleTodo('REMOVE_TODO', newTodoList)
-
     }
 
     return (
-        <li className="collection-item" key={props.item.id}>{props.item.content}
-            <span
-                onClick={() => {
-                removeTodoItem(props.item.id)
-            }}
-                className="secondary-content">
-                <i className="remove-btn material-icons blue-text">clear</i>
-            </span>
-        </li>
+        <ListItem
+            key={props.item.id}
+            sx={{borderBottom:'1px solid #e0e0e0'}}
+            secondaryAction={
+                <IconButton aria-label="comment" onClick={() => removeTodoItem(props.item.id)}>
+                    <CancelIcon />
+                </IconButton>
+            }
+        >
+            <ListItemText primary={props.item.content} />
+        </ListItem>
     );
 }
 

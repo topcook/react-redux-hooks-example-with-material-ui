@@ -9,8 +9,8 @@ const SimpleCounter = () => {
   const counter = useSelector(state => state.myCounter.counter);
 
   return (
-    <Container maxWidth="xl">
-      <Typography variant='h4' padding= {0.5} align='center' sx={{ color: 'white', bgcolor: '#2196F3'}} gutterBottom>Simple Counter</Typography>
+    <Container maxWidth="xl" sx={{ marginTop:2, marginBottom:2 }}>
+      <Typography variant='h4' padding= {0.5} align='center' sx={{ color: 'white', bgcolor: '#2196F3' }} gutterBottom>Simple Counter</Typography>
       <Typography align='center' padding= {0.5}>{counter}</Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={4} md={2}>

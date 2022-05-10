@@ -32,31 +32,33 @@ const NameCard = () => {
     };
 
     return (
-        <Container maxWidth='xl'>
-            <Typography align='center' padding={1} sx={{ color: 'white', bgcolor: '#2196F3' }} variant='h4' gutterBottom>
-                Name Card
-            </Typography>
-            <Card sx={{ bgcolor: '#757575', color: 'white', padding: 1, align: 'left' }}>
-                <CardContent>
-                    <Typography sx={{ fontSize: '24px' }}>{person.name}</Typography>
-                    <Typography sx={{ fontSize: '14px' }}>Occupation: {person.occupation}</Typography>
-                    <Typography sx={{ fontSize: '14px' }}>Age: {person.age}</Typography>
-                    <IconButton onClick={ toggleEditBtn } sx={{ '&:hover': { bgcolor: '#ff9800' }, bgcolor: '#ff9800', color: 'white', borderRadius: '50%'}}>
-                        {isEdit
-                            ? (
-                                <ClearIcon />
-                            )
-                            : (
-                                <CreateIcon />
-                            )
-                        }
-                    </IconButton>
-                </CardContent>
-            </Card>
+        <>
+            <Container maxWidth='xl' sx={{ position: 'relative', marginTop:2, marginBottom:2 }}>
+                <Typography align='center' padding={1} sx={{ color: 'white', bgcolor: '#2196F3' }} variant='h4' gutterBottom>
+                    Name Card
+                </Typography>
+                <Card sx={{ bgcolor: '#757575', color: 'white', padding: 1, align: 'left' }}>
+                    <CardContent>
+                        <Typography sx={{ fontSize: '24px' }}>{person.name}</Typography>
+                        <Typography sx={{ fontSize: '14px' }}>Occupation: {person.occupation}</Typography>
+                        <Typography sx={{ fontSize: '14px' }}>Age: {person.age}</Typography>
+                        <IconButton onClick={toggleEditBtn} sx={{ position: 'absolute', right: '48px', bottom: '-20px', '&:hover': { bgcolor: '#ff9800' }, bgcolor: '#ff9800', color: 'white', borderRadius: '50%' }}>
+                            {isEdit
+                                ? (
+                                    <ClearIcon />
+                                )
+                                : (
+                                    <CreateIcon />
+                                )
+                            }
+                        </IconButton>
+                    </CardContent>
+                </Card>
+            </Container>
             {isEdit && <EditNameCard />
             }
+        </>
 
-        </Container>
     );
 }
 
